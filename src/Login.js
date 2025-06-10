@@ -11,25 +11,42 @@ const navigate = useNavigate();
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
 const signIn = (e) =>{
     e.preventDefault();
-    signInWithEmailAndPassword(auth,email,password)
-        .then(auth =>{
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      return;
+    }
+    if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    signInWithEmailAndPassword(auth,email.trim(), password.trim())
+        .then((userCredential) =>{
             navigate('/')
         })
         .catch(error => alert(error.message));
 }
 
-const signUp = (e) =>{
+const signUp = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth,email,password)
-        .then(auth =>{
-            if(auth){
-                navigate('/')
-            }
-        })
-        .catch(error => alert(error.message))
-}
+    if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    createUserWithEmailAndPassword(auth, email.trim(), password.trim())
+      .then(auth => {
+        if (auth) {
+          navigate('/')
+        }
+      })
+      .catch(error => alert(error.message))
+  }
+
 
   return (
     <div className='login'>

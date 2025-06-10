@@ -1,24 +1,22 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBFGVHc9G8b5JhD1klxlR-6McKNr0n7g0k",
-    authDomain: "eshop-b7908.firebaseapp.com",
-    projectId: "eshop-b7908",
-    storageBucket: "eshop-b7908.appspot.com",
-    messagingSenderId: "257710150602",
-    appId: "1:257710150602:web:3199e74c8134eba2627533",
-    measurementId: "G-73NGSG8YNG"
-  };
+  apiKey: "AIzaSyCODwTKvPHYFuy7g4xQ8fhcnch1Wz0jujc",
+  authDomain: "e-com-89bf6.firebaseapp.com",
+  projectId: "e-com-89bf6",
+  storageBucket: "e-com-89bf6.firebasestorage.app",
+  messagingSenderId: "434419987054",
+  appId: "1:434419987054:web:3166b350b9cbe45e70ac7f",
+  measurementId: "G-0NL0B412P9"
+};
 
 const app = initializeApp(firebaseConfig);
-  // Initialize Firebase Authentication and get a reference to the service
+// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-export {auth,db};
-
-
+export { auth, db };

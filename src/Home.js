@@ -7,7 +7,12 @@ const Home = () => {
     <div>
         <div className="home">
             <div className="home__container">
-                <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="" className='home__image' />
+                <img
+  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1500&q=80"
+  alt="Home banner"
+  className="home__image"
+/>
+
                 <div className="home__row">
                   <Product id='1234585' title='Bennett Mystic Men Laptop Bag 15.6 inch Shoulder Briefcase Messenger 
                   Business Bags for Men & Women' price={11.96} rating={5} image='https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg'/>

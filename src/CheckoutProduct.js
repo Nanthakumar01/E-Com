@@ -10,6 +10,7 @@ const CheckoutProduct = ({id,image, title, price, rating}) => {
         dispatch({
             type: 'REMOVE_FROM_BASKET',
             id:id
+            
         })
     }
   return (
@@ -26,7 +27,7 @@ const CheckoutProduct = ({id,image, title, price, rating}) => {
                 </p>
                 <div className='checkoutProduct__rating'>
                 {Array(rating)
-                  .fill().map((i)=><p>⭐</p>)}
+                  .fill().map((_, i)=><p key={i}>⭐</p>)}
                 </div>
                 <button onClick={removeFromBasket}>Remove from Basket</button>
             </div>

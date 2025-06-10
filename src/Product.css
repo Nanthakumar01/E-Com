@@ -1,44 +1,74 @@
 .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 10px;
-    padding: 20px;
-    width: 100%;
-    max-height: 400px;
-    min-width: 100px;
-    background-color: white;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 16px;
+  width: 100%;
+  max-width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.product__info {
+  text-align: center;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.product__rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.product > img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+.product__price {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.product__button {
+  background: #ff9f00;
+  border: 1px solid #ff9f00;
+  color: #111;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.product__button:hover {
+  background-color: #ddb347;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    max-width: 100%;
+    margin: 8px auto;
+    padding: 12px;
   }
-  
-  .product__rating {
-    display: flex;
-  }
-  
+
   .product > img {
-    max-height: 200px;
-    width: 100%;
-    object-fit: contain;
-    margin: 20px 0 0 15px;
+    max-height: 160px;
   }
-  
-  .product > button {
-    background: #ff9f00;
-    border: 1px solid;
-    margin-top: 10px;
-    border-color: #ff9f00;
-    color: #111;
-    padding: 5px;
-    border-radius: 3px;
-    cursor: pointer;
+
+  .product__button {
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  .product__price {
-    margin-top: 5px;
-  }
-  
-  .product__info {
-    height: 100px;
-    margin-bottom: 15px;
-  }
+}
